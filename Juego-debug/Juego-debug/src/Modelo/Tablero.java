@@ -25,8 +25,8 @@ public class Tablero {
 	
 	protected int sumatoriaFila (int fila) {
 		int sumatoria=0;
-		for (int i=0;i<SistemaJuego.getDimCol(); i++){
-		  sumatoria = (int) (sumatoria + (this.obtenerSimbolo(fila,i).getValor()* Math.pow(2,i)));
+		for (int i=SistemaJuego.getDimCol()-1;i>=0; i--){
+		  sumatoria = (int) (sumatoria + (this.obtenerSimbolo(fila,-1*(i-4)).getValor()* Math.pow(2,(i))));
 		}
 		return sumatoria;
 		
@@ -34,7 +34,7 @@ public class Tablero {
 	
 	protected int sumatoriaColumna (int col) {
 		int sumatoria=0;
-		for (int i=0;i<SistemaJuego.getDimFila(); i++){
+		for (int i=SistemaJuego.getDimFila()-1;i>=0; i--){
 		  sumatoria = (int) (sumatoria + (this.obtenerSimbolo(i,col).getValor()*Math.pow(2,i)));
 
 		}
